@@ -1,0 +1,102 @@
+public class Node<T> {
+    private T data;
+    private Node<T> next;
+
+    public Node(T data) {
+        this.data = data;
+        this.next = null;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setNext(Node<T> next) {
+        this.next = next;
+    }
+
+    public Node<T> getNext() {
+        return next;
+    }
+}
+
+public class LinkedList<T> {
+    private Node<T> head;
+    private int size;
+
+    public LinkedList() {
+        this.head = null;
+        this.size = 0;
+    }
+
+    public void add(T data) {
+        Node<T> newNode = new Node<>(data);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node<T> currentNode = head;
+            while (currentNode.getNext() != null) {
+                currentNode = currentNode.getNext();
+            }
+            currentNode.setNext(newNode);
+        }
+        size++;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public void clear() {
+        head = null;
+        size = 0;
+    }
+
+    public void print() {
+        Node<T> currentNode = head;
+        while (currentNode != null) {
+            System.out.print(currentNode.getData() + " ");
+            currentNode = currentNode.getNext();
+        }
+        System.out.println();
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        // Создаем новый список
+        LinkedList<Integer> list = new LinkedList<>();
+
+        // Добавляем элементы в список
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(40);
+
+        // Выводим содержимое списка
+        System.out.print("Содержимое списка: ");
+        list.print();
+
+        // Выводим размер списка
+        System.out.println("Размер списка: " + list.size());
+
+        // Проверяем, пустой ли список
+        System.out.println("Список пустой? " + list.isEmpty());
+
+        // Очищаем список
+        list.clear();
+
+        // Выводим содержимое списка после очистки
+        System.out.print("Содержимое списка после очистки: ");
+        list.print();
+
+        // Выводим размер списка после очистки
+        System.out.println("Размер списка после очистки: " + list.size());
+
+        // Проверяем, пустой ли список после очистки
+        System.out.println("Список пустой после очистки? " + list.isEmpty());
+    }
+}
