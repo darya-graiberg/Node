@@ -20,7 +20,7 @@ class Node<T> {
     }
 }
 
-public class LinkedList<T> {
+class LinkedList<T> {
     private Node<T> head;
     private int size;
 
@@ -78,13 +78,13 @@ public class Main {
 
         // Выводим содержимое списка
         System.out.print("Содержимое списка: ");
-        list.print();
+        list.print();   // 10 20 30 40 
 
         // Выводим размер списка
-        System.out.println("Размер списка: " + list.size());
+        System.out.println("Размер списка: " + list.size());    // 4
 
         // Проверяем, пустой ли список
-        System.out.println("Список пустой? " + list.isEmpty());
+        System.out.println("Список пустой? " + list.isEmpty()); // false
 
         // Очищаем список
         list.clear();
@@ -94,9 +94,9 @@ public class Main {
         list.print();
 
         // Выводим размер списка после очистки
-        System.out.println("Размер списка после очистки: " + list.size());
+        System.out.println("Размер списка после очистки: " + list.size());  // 0
 
         // Проверяем, пустой ли список после очистки
-        System.out.println("Список пустой после очистки? " + list.isEmpty());
+        System.out.println("Список пустой после очистки? " + list.isEmpty());   // true
     }
 }
